@@ -14,7 +14,7 @@ install:
 - pip install -r requirements.txt
 
 build_script:
-- flet pack main.py --name  QRGenerator --icon icon.png --product-name QRGenerator --product-version "0.0.1" --copyright "Copyright (c) 2023 Roberto-Parra Inc."
+- flet pack main.py --name QRGenerator --icon icon.png --product-name QRGenerator --product-version "0.0.1" --copyright "Copyright (c) 2023 Roberto-Parra Inc."
 
 test: off
 
@@ -35,10 +35,10 @@ for:
     - image: Visual Studio 2019
 
   after_build:
-  - 7z a counter-windows.zip %CD%\dist\*.exe
+  - 7z a QRGenerator-windows.zip %CD%\dist\*.exe
 
   artifacts:
-  - path: counter-windows.zip
+  - path: QRGenerator-windows.zip
 
 #
 #   macOS package
@@ -49,10 +49,10 @@ for:
     - image: macOS
 
   after_build:
-  - tar -czvf counter-macos.tar.gz -C dist counter.app
+  - tar -czvf QRGenerator-macos.tar.gz -C dist QRGenerator.app
 
   artifacts:
-  - path: counter-macos.tar.gz
+  - path: QRGenerator-macos.tar.gz
 
 #
 #   Linux package
@@ -63,7 +63,7 @@ for:
     - image: Ubuntu
 
   after_build:
-  - tar -czvf counter-linux.tar.gz -C dist counter
+  - tar -czvf QRGenerator-linux.tar.gz -C dist QRGenerator
 
   artifacts:
-  - path: counter-linux.tar.gz
+  - path: QRGenerator-linux.tar.gz
